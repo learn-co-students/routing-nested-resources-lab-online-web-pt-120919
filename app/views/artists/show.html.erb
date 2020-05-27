@@ -1,6 +1,10 @@
+<% flash.each do |msg| %>
+  <h1><%= msg %></h1>
+<% end %>
+
 <h1><%= @artist.name %></h1>
 <ul>
   <% @artist.songs.each do |song| %>
-    <li><%= song.title %></li>
+    <li><%= link_to song.title, artist_song_path(@artist, song.id) %></li>
   <% end %>
 </ul>
